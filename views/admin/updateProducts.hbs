@@ -1,0 +1,50 @@
+<div class="addProduct">
+    <div class="container pt-5">
+        <form action="/updateBySubscribs/{{data.id}}" method="POST" class="mt-5" enctype="multipart/form-data">
+            {{#if data}}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product Name" name="name"
+                    required value="{{data.name}}">
+            </div>
+            {{/if }}
+
+            {{#if data}}
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Product Price</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Product Price"
+                    name="price" required value="{{data.price}}">
+            </div>
+            {{/if }}
+
+            {{#if data}}
+            <div class="mb-3">
+                <label for="select" class="form-label">Category Name</label>
+                <select name="categoryId" id="select" class="form-control" name="select">
+                    {{#each category}}
+                    <option value="{{id}}" id="{{id}}">{{category}}</option>
+                    {{/each}}
+                </select>
+
+            </div>
+            {{/if }}
+
+            {{#if data}}
+            <div class="mb-3">
+                <label for="asdsadasdasd" class="form-label">Product Image</label>
+                <input type="file" class="form-control" id="asdsadasdasd" placeholder="Product Name" name="img" required
+                    value={{data.img}}>
+            </div>
+            {{/if }}
+
+            {{#if data}}
+            <div class="mb-3">
+                <label for="more" class="form-label">About the product</label>
+                <input type="text" class="form-control" id="more" placeholder="About the product" name="more" required
+                    value="{{more}}">
+            </div>
+            {{/if }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

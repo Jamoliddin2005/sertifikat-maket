@@ -1,0 +1,42 @@
+<div class="container pt-5  ">
+    <div class="row">
+        {{#each prood}}
+        <div class="col-lg-3 pt-3">
+            <div class="product">
+                <div class="img">
+                    <img src="/images/{{img}}" alt="">
+                </div>
+                <h5>Category</h5>
+                <h4>{{name}}</h4>
+                <h3>{{price}}</h3>
+                <div class="product-rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="row like_and_eye">
+                    <div class="col-lg-4">
+                        <li>
+                            <a href="/">
+                                <i class="far fa-heart"></i>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="col-lg-4">
+                        <li>
+                            <a href="/">
+                                <i class="far fa-eye"></i>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+                <div class="button_cart">
+                    <a href="/" class="add_to_cart">ADD TO CART</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

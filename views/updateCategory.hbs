@@ -1,0 +1,9 @@
+<div class="container pt-5">
+    <form action="/update/{{data.id}}" method="POST" class="pb-5">
+        {{#if data}}
+        <label for="exampleInputEmail1" class="form-label  pt-5">Category Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" value="{{data.category}}" name="category">
+        <button class="btn btn-success mt-3">Submit</button>
+        {{/if}}
+    </form>
+</div>

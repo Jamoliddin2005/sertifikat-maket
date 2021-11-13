@@ -1,0 +1,153 @@
+{{>navbarItem}}
+<div class="categories">
+    <div class="container">
+        <ul>
+            <li><a href="">Home</a></li>
+            {{#each category}}
+            <li><a href="/category/{{id}}">{{category}}</a></li>
+            {{/each}}
+
+            {{!-- <li><a href="/">{{data}}</a></li> --}}
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        {{#each topProduct}}
+        <div class="col-lg-4 pt-5">
+            <div class="shop-img">
+                <img src="/images/{{img}}" alt="">
+                <div class="absolute">
+                    <h3>{{name}}</h3>
+                    <a href="/{{id}}">Shop now
+                        <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<div class="container pt-5">
+    <h3 class="pt-5 new_prod">New Products</h3>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {{#each CarouselProduct}}
+            <div class="swiper-slide">
+                <div class="product">
+                    <div class="img">
+                        <img src="/images/{{img}}" alt="">
+                    </div>
+                    <h5>{{name}}</h5>
+                    <h4>{{name}}</h4>
+                    <h3>{{price}}</h3>
+                    <div class="product-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="row like_and_eye">
+                        <div class="col-lg-4">
+                            <li>
+                                <a href="/">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="col-lg-4">
+                            <li>
+                                <a href="/">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="button_cart">
+                        <a href="/" class="add_to_cart add_to_cart_alert">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="col-lg-7 m-auto">
+            <ul>
+                <li>
+                    <span >07</span>
+                    hours
+                </li>
+                <li>
+                    <span id="hour">00</span>
+                    hours
+                </li>
+                <li>
+                    <span id="minute">00</span>
+                    mins
+                </li>
+                <li>
+                    <span id="seconds">00</span>
+                    secs
+                </li>
+            </ul>
+            <h2 class="text-uppercase">hot deal this week</h2>
+            <p>New Collection Up to 50% OFF</p>
+            <a href="/" class="primary-btn cta-btn">Shop now</a>
+        </div>
+    </div>
+</div>
+<div class="container pt-5">
+    <h3 class="pt-5 new_prod">products placed by subscribers</h3>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {{#each products}}
+            <div class="swiper-slide">
+                <div class="product">
+                    <div class="img">
+                        <img src="/images/{{img}}" alt="">
+                    </div>
+                    <h5>{{select}}</h5>
+                    <h4>{{name}}</h4>
+                    <h3>{{price}}</h3>
+                    <div class="product-rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="row like_and_eye">
+                        <div class="col-lg-4">
+                            <li>
+                                <a href="/">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="col-lg-4">
+                            <li>
+                                <a href="/">
+                                    <i class="far fa-eye"></i>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="button_cart">
+                        <a href="/products/{{id}}" class="add_to_cart">ADD TO CART</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

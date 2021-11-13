@@ -1,0 +1,169 @@
+<h1 class="text-center">Admin</h1>
+
+<div class="container admin_container">
+    <div class="row justify-content-between">
+        <div class="col-lg-5">
+            <img src="/images/agregate_screen.png" alt="">
+            <form action='/admin/add' method="POST" class="mt-5">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Category Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Category Name"
+                        name="category">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-lg-5 admin_category">
+            <ul>
+                <h4>Categories</h4>
+                {{#each category}}
+                <li><a href="/category/{{id}}">{{category}}</a> <a href="/delete/{{id}}"><i
+                            class="fas fa-trash-alt"></i></a> <a href="/update/{{id}}"><i class="fas fa-pen"></i></a>
+                </li>
+                {{/each}}
+
+                {{!-- <li><a href="/">{{data}}</a></li> --}}
+            </ul>
+        </div>
+        <div class="col-lg-5">
+            <img src="/images/screen_top.png" alt="">
+            <form action="/admin/topProducts" method="POST" enctype="multipart/form-data">
+                <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product Name" name="name">
+                <label for="exampleInputEmail1" class="form-label mt-3">Product Image</label>
+                <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Product Image" name="img">
+                <button class="btn btn-danger mt-3">Submit</button>
+            </form>
+        </div>
+        <div class="col-lg-5 admin_top_products">
+            <div class="row">
+                {{#each topProduct}}
+                <div class="col-lg-12 pt-5">
+                    <div class="shop-img">
+                        <img src="/images/{{img}}" alt="">
+                        <div class="absolute">
+                            <h3>{{name}}</h3>
+                            <a href="/{{id}}">Shop now
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                            <div class="delete"> <a href="/deleteTop/{{id}}"><i class="fas fa-trash-alt"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-lg-12 col-lg-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="/images/slider_img.png" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <form action="/admin/addSlider" method="POST" enctype="multipart/form-data">
+                        <label for="exampleInputEmail1" class="form-label">Product Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product Name"
+                            name="name">
+                        <label for="exampleInputEmail1" class="form-label">Product Price</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product Price"
+                            name="price">
+                        <label for="exampleInputEmail1" class="form-label">Product Img</label>
+                        <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Product Img"
+                            name="img">
+                        <button class="btn btn-warning mt-3">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-lg-5 pt-5">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {{#each carouselProduct}}
+                    <div class="swiper-slide">
+                        <div class="product">
+                            <div class="img">
+                                <img src="/images/{{img}}" alt="">
+                            </div>
+                            <h5>{{name}}</h5>
+                            <h4>{{name}}</h4>
+                            <h3>{{price}}</h3>
+                            <div class="product-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="row like_and_eye">
+                                <div class="col-lg-4">
+                                    <li>
+                                        <a href="/">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+                                    </li>
+                                </div>
+                                <div class="col-lg-4">
+                                    <li>
+                                        <a href="/">
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="button_cart">
+                                <a href="/deleteCarouselProduct/{{id}}" class="add_to_cart">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <h1 class="by_subscribes">By Subscribes</h1>
+        <div class="col-lg-12 admin_carousel_by_subscribes p-0">
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {{#each product}}
+                    <div class="swiper-slide">
+                        <div class="product">
+                            <div class="img">
+                                <img src="/images/{{img}}" alt="">
+                            </div>
+                            <h5>{{name}}</h5>
+                            <h4>{{name}}</h4>
+                            <h3>{{price}}</h3>
+                            <div class="product-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="row like_and_eye">
+                                <div class="col-lg-4">
+                                    <li>
+                                        <a href="/">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+                                    </li>
+                                </div>
+                                <div class="col-lg-4">
+                                    <li>
+                                        <a href="/">
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                    </li>
+                                </div>
+                            </div>
+                            <div class="button_cart d-flex">
+                                <a href="/deleteBySubscribes/{{id}}" class="add_to_cart">Delete</a>
+                                <a href="/updateBySubscribes/{{id}}" class="add_to_cart">Update</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
